@@ -5,5 +5,12 @@ function addToList() {
   const task = document.createElement("li");
   task.innerHTML = field.value;
   list.appendChild(task);
+  task.onclick = function () {
+    remove(this);
+  };
   field.innerHTML = "";
+}
+
+function remove(e) {
+  e.parentNode.removeChild(e);
 }
